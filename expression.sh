@@ -11,3 +11,5 @@ e=$(($a*$b+$c))
 echo $e
 f=$(($c+$a/$b))
 echo $f
+g=$(($a%$b+$c))
+echo $g
