@@ -1,11 +1,11 @@
 echo "Welcome To Employee Wage Computation Program"
-check=$((RANDOM%3))
-echo $check
 wph=20
 fdh=8
 pth=4
 salary=0
-
+for((i=1; i<=20; i++))
+do
+check=$((RANDOM%3))
 case $check in
 		0)
 			echo "He was absent"
@@ -25,4 +25,4 @@ case $check in
 			echo $salary
 		;;
 esac
-
+done
