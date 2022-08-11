@@ -1,8 +1,11 @@
 #! bin/bash -x
+echo "Enter 1st input"
 read a
-echo $a
+echo "Enter 2nd input"
 read b
-echo $b
+echo "Enter 3rd input"
 read c
-echo $c
+d=$(($a+$b*$c))
+echo $d
+
 
