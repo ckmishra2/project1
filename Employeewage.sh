@@ -25,13 +25,14 @@ hrwage=100
 total=0
 totalwhr=0
 day=1
-
+declare -a dailywage=()
 while [[ $day -le 20 ]]
 do
 	temp=$((RANDOM%3))
     whr=$(task $temp)
     totalwhr=$((totalwhr + whr))
     salary=$((whr*hrwage))
+    dailywage+=($salary)
    if [ $temp == 0 ]
 	then
 	echo "He was absent. Salary= $salary"
@@ -44,5 +45,5 @@ do
 	total=$((total+salary))
     ((day++))
 done
-
+echo ${dailywage[@]}
 echo $total
