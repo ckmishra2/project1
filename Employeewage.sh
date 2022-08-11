@@ -1,28 +1,48 @@
-echo "Welcome To Employee Wage Computation Program"
-wph=20
-fdh=8
-pth=4
-salary=0
-for((i=1; i<=20; i++))
+
+#! bin/bash -x
+echo "Welcome To Employee Wage Computation Program "
+#!bin/bash -x
+function task(){
+       
+        case $1 in
+            0)
+                workinghr=0
+            ;;
+
+            1)
+                workinghr=8
+            ;;
+
+            2)
+                workinghr=4
+            ;;
+        esac
+        echo $workinghr
+}
+
+
+hrwage=100
+total=0
+totalwhr=0
+day=1
+
+while [[ $day -le 20 ]]
 do
-check=$((RANDOM%3))
-case $check in
-		0)
-			echo "He was absent"
-			salary=0
-			echo $salary
-		;;
-
-		1)
-			echo "He was present on that day"
-			salary=$((fdh*wph))
-			echo $salary
-		;;
-
-		2)
-			echo "He took half a day"
-			salary=$((pth*wph))
-			echo $salary
-		;;
-esac
+	temp=$((RANDOM%3))
+    whr=$(task $temp)
+    totalwhr=$((totalwhr + whr))
+    salary=$((whr*hrwage))
+   if [ $temp == 0 ]
+	then
+	echo "He was absent. Salary= $salary"
+	elif [ $temp == 1 ]
+	then
+	echo "He was present. Salary= $salary"
+	else
+	echo "He took half-day. Salary= $salary"
+	fi
+	total=$((total+salary))
+    ((day++))
 done
+
+echo $total
