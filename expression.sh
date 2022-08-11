@@ -10,5 +10,5 @@ dict[A]=$((a+b*c))
 dict[B]=$((a*b+c))
 dict[C]=$((c+a/c))
 echo ${dict[@]}
-echo ${result[@]}
+#echo ${result[@]}
 
