@@ -32,7 +32,7 @@ do
     whr=$(task $temp)
     totalwhr=$((totalwhr + whr))
     salary=$((whr*hrwage))
-    dailywage+=($salary)
+    dailywage+=("day $day "$salary)
    if [ $temp == 0 ]
 	then
 	echo "He was absent. Salary= $salary"
