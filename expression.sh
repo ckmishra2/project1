@@ -7,5 +7,6 @@ echo "Enter 3rd input"
 read c
 d=$(($a+$b*$c))
 echo $d
-
+e=$(($a*$b+$c))
+echo $e
 
