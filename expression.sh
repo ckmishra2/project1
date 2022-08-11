@@ -9,4 +9,5 @@ d=$(($a+$b*$c))
 echo $d
 e=$(($a*$b+$c))
 echo $e
-
+f=$(($c+$a/$b))
+echo $f
