@@ -15,6 +15,10 @@ result+=($(($c+$a/$c)))
 dict[A]=$((a+b*c))
 dict[B]=$((a*b+c))
 dict[C]=$((c+a/c))
-echo ${dict[@]}
 echo ${result[@]}
+#echo ${dict[@]}
+for i in $( echo "${result[@]}" | tr ' ' '\n' | sort -nr )
+	do
+		echo $i
+	done
 
